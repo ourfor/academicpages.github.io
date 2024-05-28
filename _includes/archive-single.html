@@ -13,10 +13,12 @@
 {% endif %}
 
 <div class="{{ include.type | default: "list" }}__item">
+  {% if post.collection == 'publications' %}
   <div class="archive-item-body">
   <div class="article-poster">
   <img src="https://huangqy89.github.io/cn-2024/_images/logo.png" alt="" />
   </div>
+  {% endif %}
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
@@ -73,5 +75,7 @@
     </div>
 
   </article>
+  {% if post.collection == 'publications' %}
   </div>
+  {% endif %}
   </div>
